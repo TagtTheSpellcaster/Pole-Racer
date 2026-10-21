@@ -5,12 +5,11 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![Canvas 2D](https://img.shields.io/badge/rendering-Canvas_2D-informational)
+![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![Single file](https://img.shields.io/badge/distribution-single_file-lightgrey)
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
 An arcade racing game in the spirit of the 1982 classic *Pole Position*, written as a single self-contained `index.html`: pseudo-3D road rendering on a 2D canvas, synthesized sound, no assets, no build step, no dependencies.
-
-You can play it here: https://tagtthespellcaster.github.io/Pole-Racer/
 
 > Pole Racer is an original work inspired by the genre of early-80s arcade racers. It is not affiliated with, endorsed by, or derived from the code or assets of any commercial title.
 
@@ -132,7 +131,7 @@ Tracks are defined as compact lists of straights, curves, tunnel and river secti
 
 ## Changelog
 
-* **1.4**: Night mode with headlight cone, starry sky and tail lights on other cars; the tunnel is now dark and lit by the headlights only; in Intermediate and Expert the car leaves the road progressively instead of at the very start of a bend.
+* **1.4**: Night mode with headlight cone, starry sky and tail lights on other cars; the tunnel is now dark and lit by the headlights only; in Intermediate and Expert the car leaves the road progressively instead of at the very start of a bend. Tunnel rendering reworked: no more flicker of the entrance, a finite portal building, smooth shading of walls, ceiling and road.
 * **1.3**: Easy / Intermediate / Expert driving modes.
 * **1.2**: Three new circuits (Riviera Streets with tunnel, Cascade Valley with river, bridges and waterfalls, Pine Forest).
 * **1.1**: Training mode, pause menu with exit, mobile layout and Gamepad API fixes.
