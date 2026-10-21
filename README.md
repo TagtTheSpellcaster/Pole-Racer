@@ -1,6 +1,6 @@
 # Pole Racer
 
-![Version](https://img.shields.io/badge/version-1.4-blue)
+![Version](https://img.shields.io/badge/version-1.6-blue)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
@@ -31,7 +31,7 @@ From the title screen, use **Up/Down** to select a row and **Left/Right** to cha
 
 | Row | Description |
 | --- | --- |
-| **Arcade** | Qualifying lap, then a 3-lap race against 7 cars. Beat the clock: each lap adds time. After the race the next circuit starts; after the sixth the cycle repeats with a harder field. |
+| **Arcade** | Qualifying lap, then a 3-lap race against 7 cars. Beat the clock: each lap adds time. After the race the next circuit starts; after the ninth the cycle repeats with a harder field. |
 | **Training** | Free driving on a circuit of your choice, with no traffic, no clock and no score. Laps are counted and timed. Pause and choose *Exit to menu* to leave. |
 | **Mode** | Driving difficulty: **Easy**, **Intermediate**, **Expert** (see below). The choice is saved in the browser. |
 | **Time** | **Day** or **Night**. Applies to every circuit, in Arcade and Training. The choice is saved in the browser. |
@@ -48,6 +48,10 @@ The modes differ in how much the road pulls the car sideways in a bend, and ther
 
 In Intermediate and Expert the car does not snap off the road at the start of a bend: the sideways push builds up gradually, as if the car had lateral inertia, and fades gradually after the bend. This leaves time to react by steering or lifting, but taking a tight bend flat out still ends off the road.
 
+### Minimap
+
+A small schematic map of the circuit is shown at the right edge under the lap time, with the finish line, your car (yellow) and, in a race, the other cars (red). Tunnels are drawn in orange and bridges in blue. Toggle it with `T`; the choice is saved in the browser. The outline is derived from the track's curvature and forced to close, so it is schematic and not to scale.
+
 ### Night
 
 In night mode the scenery is dark and the road is lit only by the car's headlights: a cone of light ahead of the car, fixed to the car's heading. On bends the road leaves the beam, so you see less of what is coming and must brake earlier. Other cars appear as dark shapes with red tail lights. Night mode can be combined with any driving mode. In Training it can also be toggled at any time with `N`.
@@ -56,7 +60,7 @@ In night mode the scenery is dark and the road is lit only by the car's headligh
 
 The tunnel on Riviera Streets is dark in both day and night: the road and walls are visible only within the reach of the headlights, and the exit shows as a distant patch of daylight.
 
-Leaving the road slows the car heavily; hitting scenery, tunnel walls or bridge edges causes a crash and a short respawn.
+Leaving the road slows the car heavily; hitting scenery, tunnel walls, rock walls, bridge edges or going over a precipice edge causes a crash and a short respawn.
 
 ## Circuits
 
@@ -66,6 +70,9 @@ Leaving the road slows the car heavily; hitting scenery, tunnel walls or bridge 
 4. **Riviera Streets**: coastal city circuit with a long, dark tunnel section.
 5. **Cascade Valley**: alpine valley with a river running alongside the road, two bridges and waterfalls.
 6. **Pine Forest**: dense conifer woodland with trees close to the track.
+7. **Coast Road**: road cut into a mountainside: a jagged rock wall on the left and a precipice over the sea on the right, with no run-off on either side. Touching the rock or crossing the edge destroys the car.
+8. **Viaduct Run**: several bridges, some very long, over rivers and over a deep valley; steel arches over the deck, no run-off beyond the parapets.
+9. **Alpine Tunnels**: five tunnels of different lengths, some with bends inside.
 
 ## Controls
 
@@ -82,6 +89,7 @@ Leaving the road slows the car heavily; hitting scenery, tunnel walls or bridge 
 | Exit to menu (while paused) | `Q` |
 | Mute | `M` |
 | Day / night (title screen and Training) | `N` |
+| Show / hide minimap | `T` |
 | Mouse steering | `C` (then click the game to capture the pointer) |
 | Menu | `Up` / `Down`, `Left` / `Right`, `Enter` |
 
@@ -121,16 +129,19 @@ The best score and the chosen driving mode are stored in the browser's `localSto
 * Cornering model: target lateral drift = `k * |curve|^p * speed^2`, followed by the car through a first-order lag with time constant `tau`. The per-mode constants `k`, `p` and `tau` are in the `DRIVES` table near the top of the script (Easy uses `tau = 0`, i.e. no lag).
 * Automatic pause when the tab or window loses focus.
 
-Tracks are defined as compact lists of straights, curves, tunnel and river sections (`TRACKDEFS`); themes (`THEMES`) define sky, scenery layers and roadside objects.
+Tracks are defined as compact lists of straights, curves, tunnel, river/bridge and mountain-side sections (`TRACKDEFS`); themes (`THEMES`) define sky, scenery layers and roadside objects.
 
 ## Known limitations
 
+* The road has no elevation: the mountain wall, the precipice and the valley under the viaduct are drawn scenery on a flat road, not real 3D geometry. The precipice is shown as sea beyond the road edge, without a visible drop.
 * Difficulty values (time limits, traffic speed, qualifying thresholds) were tuned with automated driving tests, not extensive human play, and may need adjustment.
 * Rendering and audio were checked in a headless environment; behavior on specific browsers and devices should be verified.
 * Night mode uses canvas compositing modes (`source-atop`, `destination-over`, `lighter`) on a 640x480 canvas; very old browsers may render it differently.
 
 ## Changelog
 
+* **1.6**: Minimap with finish line, player and opponent markers (`T` to toggle).
+* **1.5**: Three new circuits: Coast Road (rock wall and precipice, both lethal), Viaduct Run (long bridges over rivers and a valley), Alpine Tunnels (five tunnels).
 * **1.4**: Night mode with headlight cone, starry sky and tail lights on other cars; the tunnel is now dark and lit by the headlights only; in Intermediate and Expert the car leaves the road progressively instead of at the very start of a bend. Tunnel rendering reworked: no more flicker of the entrance, a finite portal building, smooth shading of walls, ceiling and road.
 * **1.3**: Easy / Intermediate / Expert driving modes.
 * **1.2**: Three new circuits (Riviera Streets with tunnel, Cascade Valley with river, bridges and waterfalls, Pine Forest).
