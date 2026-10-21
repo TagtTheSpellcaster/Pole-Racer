@@ -5,11 +5,12 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![Canvas 2D](https://img.shields.io/badge/rendering-Canvas_2D-informational)
-![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![Single file](https://img.shields.io/badge/distribution-single_file-lightgrey)
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
 An arcade racing game in the spirit of the 1982 classic *Pole Position*, written as a single self-contained `index.html`: pseudo-3D road rendering on a 2D canvas, synthesized sound, no assets, no build step, no dependencies.
+
+You can play it here: https://tagtthespellcaster.github.io/Pole-Racer/
 
 > Pole Racer is an original work inspired by the genre of early-80s arcade racers. It is not affiliated with, endorsed by, or derived from the code or assets of any commercial title.
 
