@@ -5,7 +5,6 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![Canvas 2D](https://img.shields.io/badge/rendering-Canvas_2D-informational)
-![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![Single file](https://img.shields.io/badge/distribution-single_file-lightgrey)
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
