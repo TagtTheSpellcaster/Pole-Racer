@@ -1,16 +1,15 @@
 # Pole Racer
 
-![Version](https://img.shields.io/badge/version-1.6-blue)
+![Version](https://img.shields.io/badge/version-1.14-blue)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![Canvas 2D](https://img.shields.io/badge/rendering-Canvas_2D-informational)
+![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![Single file](https://img.shields.io/badge/distribution-single_file-lightgrey)
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
 An arcade racing game in the spirit of the 1982 classic *Pole Position*, written as a single self-contained `index.html`: pseudo-3D road rendering on a 2D canvas, synthesized sound, no assets, no build step, no dependencies.
-
-You can play it here: https://tagtthespellcaster.github.io/Pole-Racer/
 
 > Pole Racer is an original work inspired by the genre of early-80s arcade racers. It is not affiliated with, endorsed by, or derived from the code or assets of any commercial title.
 
@@ -69,11 +68,11 @@ Leaving the road slows the car heavily; hitting scenery, tunnel walls, rock wall
 2. **Harbor Run**: seaside, palms, city skyline.
 3. **Dusk Desert**: sunset mesas and cacti.
 4. **Riviera Streets**: coastal city circuit with a long, dark tunnel section.
-5. **Cascade Valley**: alpine valley with a river running alongside the road, two bridges and waterfalls.
+5. **Cascade Valley**: alpine valley with a river that runs along the whole circuit and crosses under four bridges, with wooded slopes on both sides and waterfalls pouring down them. Water and falls are animated.
 6. **Pine Forest**: dense conifer woodland with trees close to the track.
 7. **Coast Road**: road cut into a mountainside: a jagged rock wall on the left and a precipice over the sea on the right, with no run-off on either side. Touching the rock or crossing the edge destroys the car.
 8. **Viaduct Run**: several bridges, some very long, over rivers and over a deep valley; steel arches over the deck, no run-off beyond the parapets.
-9. **Alpine Tunnels**: five tunnels of different lengths, some with bends inside.
+9. **Alpine Tunnels**: five tunnels of different lengths, some with bends inside, bored into grassy hills.
 
 ## Controls
 
@@ -141,6 +140,14 @@ Tracks are defined as compact lists of straights, curves, tunnel, river/bridge a
 
 ## Changelog
 
+* **1.14**: Coast Road: the rock wall on the left now leans back about 12.5° from vertical and has a more uniform, layered rock look.
+* **1.13**: Cascade Valley: waterfalls now descend from continuous, opaque mountain ranges along the valley (one long range where waterfalls are close together, a single range with a tapering start and end where they are isolated); removed the free-standing hills.
+* **1.12**: Cascade Valley reworked: continuous river with banks and animated ripples that crosses under the road at four bridges; valley slopes with animated waterfalls and splash pools replace the free-standing falls; removed the vertical falls strip from the background mountains.
+* **1.11**: Corner sequences of all nine circuits redesigned: about 65% of consecutive corners alternate side and 35% repeat the same side (mostly on the side of the first corner); two circuits (Dusk Desert, Pine Forest) now start with a left corner, the others with a right one. Fixed the minimap being mirrored left-right.
+* **1.10**: Alpine Tunnels: no more patches of sky visible at the corners of the vaulted tunnel when entering and driving inside.
+* **1.9**: Arched tunnels and hill portals apply to Alpine Tunnels only; Riviera Streets keeps its rectangular tunnel and building portal. Removed bright artefacts on the tunnel vault.
+* **1.8**: Arched (vaulted) tunnel cross-section; on Alpine Tunnels each portal is set into a grassy hill with rock patches and pines instead of a box-like building.
+* **1.7**: Mouse pointer hidden while driving; new explosion (flash, fireball, shockwave, debris, sparks, smoke, flames) and a deeper, longer explosion sound.
 * **1.6**: Minimap with finish line, player and opponent markers (`T` to toggle).
 * **1.5**: Three new circuits: Coast Road (rock wall and precipice, both lethal), Viaduct Run (long bridges over rivers and a valley), Alpine Tunnels (five tunnels).
 * **1.4**: Night mode with headlight cone, starry sky and tail lights on other cars; the tunnel is now dark and lit by the headlights only; in Intermediate and Expert the car leaves the road progressively instead of at the very start of a bend. Tunnel rendering reworked: no more flicker of the entrance, a finite portal building, smooth shading of walls, ceiling and road.
