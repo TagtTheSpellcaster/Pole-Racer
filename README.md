@@ -11,6 +11,8 @@
 
 An arcade racing game in the spirit of the 1982 classic *Pole Position*, written as a single self-contained `index.html`: pseudo-3D road rendering on a 2D canvas, synthesized sound, no assets, no build step, no dependencies.
 
+You can play it here: https://tagtthespellcaster.github.io/Pole-Racer/
+
 > Pole Racer is an original work inspired by the genre of early-80s arcade racers. It is not affiliated with, endorsed by, or derived from the code or assets of any commercial title.
 
 ## Quick start
