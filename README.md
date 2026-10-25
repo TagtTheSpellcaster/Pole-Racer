@@ -1,10 +1,11 @@
 # Pole Racer
 
-![Version](https://img.shields.io/badge/version-1.14-blue)
+![Version](https://img.shields.io/badge/version-1.24-blue)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![Canvas 2D](https://img.shields.io/badge/rendering-Canvas_2D-informational)
+![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![Single file](https://img.shields.io/badge/distribution-single_file-lightgrey)
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
@@ -87,6 +88,7 @@ Leaving the road slows the car heavily; hitting scenery, tunnel walls, rock wall
 | Pause / resume | `P` or `Esc` |
 | Exit to menu (while paused) | `Q` |
 | Mute | `M` |
+| Save a screenshot (PNG download) | `K` |
 | Day / night (title screen and Training) | `N` |
 | Show / hide minimap | `T` |
 | Mouse steering | `C` (then click the game to capture the pointer) |
@@ -139,6 +141,16 @@ Tracks are defined as compact lists of straights, curves, tunnel, river/bridge a
 
 ## Changelog
 
+* **1.24**: Screenshot key (`K`) saves the current frame as a PNG.
+* **1.23**: Viaduct Run: free-standing waterfall pillars replaced by the same continuous, opaque mountain ranges with animated waterfalls used in Cascade Valley.
+* **1.22**: Start-line stands lightened (about 25-30% less drawing time near the start line); the stand banner easter egg removed and replaced by one roadside sign per circuit.
+* **1.21**: Easter eggs adjusted.
+* **1.20**: A few easter eggs. Find them yourself.
+* **1.19**: Warning signs before the sharper corners in Intermediate and Expert modes: 1 to 3 chevrons pointing in the turn direction (yellow, orange, red), based on the speed at which the corner can be held with the current mode's drift. Not shown in Easy. The level is relative, not a speed limit.
+* **1.18**: Crowd audio reworked: a continuous babble of synthesized voices (formant-filtered, not white noise) that is already audible at the start, swells as the car approaches the start line, peaks with a louder cheer layer when passing at speed, and fades after.
+* **1.17**: Scenery sprites (posts, rocks, trees, billboards) are now drawn in depth order together with the road segments, so walls and hills hide what is behind them (fixes posts/rocks/trees showing through the Coast Road wall).
+* **1.16**: Coast Road: the rock wall is now fully opaque at distance (reduced haze blending).
+* **1.15**: Grandstands with a cheering crowd on both sides of the start line (before and after it); the crowd waves and bobs as the car passes and a cheer sound plays on each pass, in arcade and training.
 * **1.14**: Coast Road: the rock wall on the left now leans back about 12.5° from vertical and has a more uniform, layered rock look.
 * **1.13**: Cascade Valley: waterfalls now descend from continuous, opaque mountain ranges along the valley (one long range where waterfalls are close together, a single range with a tapering start and end where they are isolated); removed the free-standing hills.
 * **1.12**: Cascade Valley reworked: continuous river with banks and animated ripples that crosses under the road at four bridges; valley slopes with animated waterfalls and splash pools replace the free-standing falls; removed the vertical falls strip from the background mountains.
