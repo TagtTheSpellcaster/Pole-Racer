@@ -56,7 +56,7 @@ const HORIZON=188,VS=H/2*1.25;
 const MAXSPD=SEG*60,LOCAP=0.55,CARW=480,CAMFOLLOW=0.55,FOG=5;
 const U_PLAYER=CAMD/PLAYERZ*HALF;
 const GROUND_Y=HORIZON+(CAMD/PLAYERZ)*CAMH*VS;
-const VERSION='1.24';
+const VERSION='1.25';
 const DRIVES=[{name:'EASY',k:.55,p:1,tau:0,tm:1,off:0},{name:'INTERMEDIATE',k:1.2,p:.9,tau:.4,tm:1.18,off:.12},{name:'EXPERT',k:3.2,p:.4,tau:.7,tm:1.3,off:.22}];
 const START_BACK=400,GRID_GAP=700,LAPS=3,STEP=1/60,PERIOD=1280;
 
@@ -188,12 +188,11 @@ function getTrack(i){
   k=j+1;}
  for(let q=-8;q<=16;q++){const sg=segs[(q+N)%N];if(sg.tun||sg.river||sg.mt)continue;sg.stand=true;sg.spr=sg.spr.filter(e=>e.k==='gantry'||e.k==='col'||Math.abs(e.off)>4.6);}
  {const bbs=[];for(let k=0;k<N;k++)for(const e of segs[k].spr)if(e.k==='bb')bbs.push(e);
-  if(bbs.length){const e=bbs[Math.floor(bbs.length*.4)],sd=Math.sign(e.off)||1;Object.assign(e,{off:sd*2.6,w:1800,h:420,cw:1200,fs:98,txt:'MUONGIORNO, PRINCIPESSA',c1:'#d81b60',c2:'#ffffff'});
-   const e2=bbs[Math.floor(bbs.length*.75)];if(e2&&e2!==e)Object.assign(e2,{off:(Math.sign(e2.off)||1)*2.3,w:1100,h:420,cw:800,fs:150,txt:'PISA MERDA',c1:'#f5c400',c2:'#111111'});}}
+  if(bbs.length){const e2=bbs[Math.floor(bbs.length*.75)];if(e2)Object.assign(e2,{off:(Math.sign(e2.off)||1)*2.3,w:1100,h:420,cw:800,fs:150,txt:'PISA MERDA',c1:'#f5c400',c2:'#111111'});}}
  {const has=t=>segs.some(sg=>sg.spr.some(e=>e.k==='bb'&&e.txt===t));
   const put=(t,fr,off,w,fs,c1,c2)=>{if(has(t))return;let k=Math.floor(N*fr);for(let g=0;g<N&&(segs[k%N].tun||segs[k%N].river||segs[k%N].mt||segs[k%N].stand||segs[k%N].rgL||segs[k%N].rgR||segs[k%N].spr.some(e=>Math.abs(e.off)>1.4&&Math.abs(e.off)<3.5&&e.cw>0));g++)k++;
    segs[k%N].spr.push({k:'bb',off,w,h:420,cw:Math.round(w*.7),fs,txt:t,c1,c2});};
-  put('MUONGIORNO, PRINCIPESSA',.55,-2.6,1800,98,'#d81b60','#ffffff');put('PISA MERDA',.3,2.3,1100,150,'#f5c400','#111111');}
+  put('PISA MERDA',.3,2.3,1100,150,'#f5c400','#111111');}
  segs[3].spr.push({k:'gantry',off:0,cw:0},{k:'col',off:-1.45,cw:200},{k:'col',off:1.45,cw:200});
  tracks[i]={segs,N,L:N*SEG,theme:th,name:th.name};
  return tracks[i];

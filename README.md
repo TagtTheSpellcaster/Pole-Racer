@@ -1,6 +1,6 @@
 # Pole Racer
 
-![Version](https://img.shields.io/badge/version-1.24-blue)
+![Version](https://img.shields.io/badge/version-1.25-blue)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
@@ -10,8 +10,6 @@
 ![Input](https://img.shields.io/badge/input-keyboard_%7C_touch_%7C_gamepad-orange)
 
 An arcade racing game in the spirit of the 1982 classic *Pole Position*, written as a single self-contained `index.html`: pseudo-3D road rendering on a 2D canvas, synthesized sound, no assets, no build step, no dependencies.
-
-You can play it here: https://tagtthespellcaster.github.io/Pole-Racer/
 
 > Pole Racer is an original work inspired by the genre of early-80s arcade racers. It is not affiliated with, endorsed by, or derived from the code or assets of any commercial title.
 
@@ -143,6 +141,7 @@ Tracks are defined as compact lists of straights, curves, tunnel, river/bridge a
 
 ## Changelog
 
+* **1.25**: One easter egg sign removed.
 * **1.24**: Screenshot key (`K`) saves the current frame as a PNG.
 * **1.23**: Viaduct Run: free-standing waterfall pillars replaced by the same continuous, opaque mountain ranges with animated waterfalls used in Cascade Valley.
 * **1.22**: Start-line stands lightened (about 25-30% less drawing time near the start line); the stand banner easter egg removed and replaced by one roadside sign per circuit.
